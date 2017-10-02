@@ -18,11 +18,16 @@ class Bank
   end
 
   def print_statement
-    statement_str = 'date || amount || balance'
+    statement_str = 'date || credit || debit || balance'
     historic_balance = 0
     @transactions.each do |transaction|
-      historic_balance += transaction.amount
-      statement_str += "\n#{transaction.date} || #{transaction.amount}.00 || #{historic_balance}.00"
+      if transaction.credit_amount > 0
+        historic_balance += transaction.credit_amount
+        statement_str += "\n#{transaction.date} || #{transaction.credit_amount}.00 || || #{historic_balance}.00"
+      elsif transaction.debit_amount > 0
+        historic_balance += transaction.debit_amount
+        statement_str += "\n#{transaction.date} || || #{transaction.debit_amount} || #{historic_balance}.00"
+      end
     end
     statement_str
   end
