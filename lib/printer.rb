@@ -1,4 +1,5 @@
 class Printer
+  
   attr_reader :balance, :statement_str
 
   def initialize(transactions)

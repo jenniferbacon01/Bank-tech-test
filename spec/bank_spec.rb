@@ -1,10 +1,14 @@
 require 'bank'
 
 describe Bank do
+
   subject(:bank) { described_class.new }
   let(:transaction) { double :transaction }
-  let(:transaction2) { double :transaction }
   let(:printer) { double :printer }
+
+  before do
+    allow(printer).to receive(:print_statement)
+  end
 
   it 'creates a transaction and records it' do
     bank.receive_transaction(transaction)
@@ -12,7 +16,6 @@ describe Bank do
   end
 
   it 'prints a statement' do
-    allow(printer).to receive(:print_statement)
     expect(printer).to receive(:print_statement)
     bank.print_statement(printer)
   end

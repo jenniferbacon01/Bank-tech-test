@@ -1,4 +1,5 @@
 class Bank
+  
   attr_reader :transactions
 
   def initialize
@@ -12,4 +13,5 @@ class Bank
   def print_statement(printer = Printer.new(@transactions))
     printer.print_statement
   end
+
 end
