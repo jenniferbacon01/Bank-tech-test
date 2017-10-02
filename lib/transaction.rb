@@ -1,6 +1,5 @@
 class Transaction
-  
-  attr_reader :date
+  attr_reader :date, :amount
 
   def initialize(date, amount)
     @date = date
@@ -11,5 +10,4 @@ class Transaction
     return :credit if @amount > 0
     return :debit if @amount < 0
   end
-
 end
