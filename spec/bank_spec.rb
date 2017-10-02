@@ -16,5 +16,4 @@ describe Bank do
     expect(printer).to receive(:print_statement)
     bank.print_statement(printer)
   end
-
 end
