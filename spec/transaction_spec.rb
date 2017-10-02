@@ -7,13 +7,13 @@ describe Transaction do
       expect(transaction.date).to eq '10-01-2012'
     end
     it 'calculates if the transaction is a credit' do
-      expect(transaction.credit?).to eq true
+      expect(transaction.credit_or_debit).to eq :credit
     end
   end
   describe 'debit' do
     subject(:transaction) { described_class.new('10-01-2012', -1000) }
     it 'calculates if the transaction is a debit' do
-      expect(transaction.debit?).to eq true
+      expect(transaction.credit_or_debit).to eq :debit
     end
   end
 end

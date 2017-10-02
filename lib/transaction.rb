@@ -6,13 +6,9 @@ class Transaction
     @amount = amount
   end
 
-  def credit?
-    return true if @amount > 0
-    return false if @amount <= 0
+  def credit_or_debit
+    return :credit if @amount > 0
+    return :debit if @amount < 0
   end
 
-  def debit?
-    return true if @amount < 0
-    return false if @amount >= 0
-  end
 end
