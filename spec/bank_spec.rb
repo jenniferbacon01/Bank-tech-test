@@ -17,23 +17,4 @@ describe Bank do
     bank.print_statement(printer)
   end
 
-  # it 'prints a statement after receiving a transaction' do
-  #   allow(transaction).to receive(:date).and_return('10/01/2012')
-  #   allow(transaction).to receive(:credit_or_debit).and_return(:credit)
-  #   allow(transaction).to receive(:amount).and_return(1000)
-  #   bank.receive_transaction(transaction)
-  #   expect(bank.print_statement).to eq "date || credit || debit || balance\n10/01/2012 || 1000.00 || || 1000.00"
-  # end
-  #
-  # it 'prints a statement after receiving 2 transactions' do
-  #   allow(transaction).to receive(:date).and_return('10/01/2012')
-  #   allow(transaction).to receive(:credit_or_debit).and_return(:credit)
-  #   allow(transaction).to receive(:amount).and_return(1000)
-  #   allow(transaction2).to receive(:date).and_return('13/01/2012')
-  #   allow(transaction2).to receive(:credit_or_debit).and_return(:debit)
-  #   allow(transaction2).to receive(:amount).and_return(-500)
-  #   bank.receive_transaction(transaction)
-  #   bank.receive_transaction(transaction2)
-  #   expect(bank.print_statement).to eq "date || credit || debit || balance\n13/01/2012 || || 500.00 || 500.00\n10/01/2012 || 1000.00 || || 1000.00"
-  # end
 end
