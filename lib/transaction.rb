@@ -10,4 +10,23 @@ class Transaction
     return :credit if @amount > 0
     return :debit if @amount < 0
   end
+
+  def create_trans_str
+    create_date_str + create_amount_str
+  end
+
+  private
+
+  def create_date_str
+    return "\n#{@date} || "
+  end
+
+  def create_amount_str
+    if calc_credit_or_debit == :credit
+      return "#{@amount}.00 ||"
+    else
+      return "|| #{-@amount}.00"
+    end
+  end
+
 end
