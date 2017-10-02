@@ -5,7 +5,7 @@ class Bank
     @transactions = []
   end
 
-  def receive_transaction(transaction)
+  def receive(transaction)
     @transactions << transaction
   end
 

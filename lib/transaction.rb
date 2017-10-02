@@ -22,11 +22,8 @@ class Transaction
   end
 
   def create_amount_str
-    if calc_credit_or_debit == :credit
-      return "#{@amount}.00 ||"
-    else
-      return "|| #{-@amount}.00"
-    end
+    return "#{@amount}.00 ||" if calc_credit_or_debit == :credit
+    return "|| #{-@amount}.00" if calc_credit_or_debit == :debit
   end
 
 end

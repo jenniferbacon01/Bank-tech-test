@@ -2,6 +2,7 @@
 
 ## Specification
 An irb application to record transactions and then print them on a statement.
+-
 
 How to Install
 -----
@@ -22,7 +23,7 @@ Copy and paste bank.rb and transaction.rb from the Bank-tech-test/lib directory 
   > bank = Bank.new
   > trans = Transaction.new("01/01/2017", 1000)
   > bank.receive(trans)
-  > bank.print_statement
+  > bank.print
 ````
 You should see:
 

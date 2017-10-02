@@ -8,15 +8,11 @@ describe Transaction do
       expect(transaction.date).to eq '10-01-2012'
     end
 
-    it 'creates a date string in the correct format' do
-      expect(transaction.create_date_str).to eq "\n10-01-2012 || "
-    end
-
     it 'calculates if the transaction is a credit' do
       expect(transaction.calc_credit_or_debit).to eq :credit
     end
 
-    it 'creates an amount string in the correct format' do
+    it 'creates a transaction string in the correct format' do
       expect(transaction.create_trans_str).to eq "\n10-01-2012 || 1000.00 ||"
     end
   end
@@ -28,7 +24,7 @@ describe Transaction do
       expect(transaction.calc_credit_or_debit).to eq :debit
     end
 
-    it 'creates an amount string in the correct format' do
+    it 'creates a transaction string in the correct format' do
       expect(transaction.create_trans_str).to eq "\n10-01-2012 || || 1000.00"
     end
   end

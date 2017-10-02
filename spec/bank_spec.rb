@@ -13,7 +13,7 @@ describe Bank do
   end
 
   it 'receives a transaction and records it' do
-    bank.receive_transaction(trans_cr)
+    bank.receive(trans_cr)
     expect(bank.transactions).to eq [trans_cr]
   end
 
