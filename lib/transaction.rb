@@ -3,12 +3,16 @@ class Transaction
 
   def initialize(date, amount)
     @date = date
-    if amount > 0
-      @credit_amount = amount
-      @debit_amount = 0
-    elsif amount < 0
-      @credit_amount = 0
-      @debit_amount = -amount
-    end
+    @amount = amount
+  end
+
+  def credit?
+    return true if @amount > 0
+    return false if @amount <= 0
+  end
+
+  def debit?
+    return true if @amount < 0
+    return false if @amount >= 0
   end
 end

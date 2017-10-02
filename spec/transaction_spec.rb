@@ -3,18 +3,17 @@ require 'transaction'
 describe Transaction do
   describe 'credit' do
     subject(:transaction) { described_class.new('10-01-2012', 1000) }
-    it 'records the date, credit and debit amounts when customer makes a deposit' do
+    it 'records the date when customer makes a deposit' do
       expect(transaction.date).to eq '10-01-2012'
-      expect(transaction.credit_amount).to eq 1000
-      expect(transaction.debit_amount).to eq 0
+    end
+    it 'calculates if the transaction is a credit' do
+      expect(transaction.credit?).to eq true
     end
   end
   describe 'debit' do
     subject(:transaction) { described_class.new('10-01-2012', -1000) }
-    it 'records the date, credit and debit amounts when customer withdraws money' do
-      expect(transaction.date).to eq '10-01-2012'
-      expect(transaction.credit_amount).to eq 0
-      expect(transaction.debit_amount).to eq 1000
+    it 'calculates if the transaction is a debit' do
+      expect(transaction.debit?).to eq true
     end
   end
 end
