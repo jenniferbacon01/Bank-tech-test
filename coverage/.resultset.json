@@ -1,0 +1,65 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/jenniferbacon/Documents/Coding/Makers/week14/Bank-tech-test/spec/bank_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        3,
+        2,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/jenniferbacon/Documents/Coding/Makers/week14/Bank-tech-test/lib/bank.rb": [
+        1,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/jenniferbacon/Documents/Coding/Makers/week14/Bank-tech-test/spec/transaction_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/jenniferbacon/Documents/Coding/Makers/week14/Bank-tech-test/lib/transaction.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1506940295
+  }
+}
