@@ -1,8 +1,14 @@
 # Bank tech test
 
 ## Specification
-An irb application to record transactions and then print them on a statement.
--
+An irb application to record transactions and then print them on a statement. The application can
+- Receive Deposits
+- Take Withdrawals
+- Print a Statement
+I have structured the application into three classes with the following responsibilities:
+Bank: To receive and record transactions.
+Transaction: To receive a date and an amount on instantiation. To format this information into a string.
+Statement: To return the statement string including balances and titles.
 
 How to Install
 -----
