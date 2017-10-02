@@ -27,7 +27,7 @@ class Bank
   end
 
   def add_amount_to_statement(transaction)
-    if transaction.credit_or_debit == :credit
+    if transaction.calc_credit_or_debit == :credit
       @statement.prepend("#{transaction.amount}.00 ||")
     else
       @statement.prepend("|| #{-transaction.amount}.00")
