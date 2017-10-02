@@ -10,7 +10,11 @@ class Bank
   end
 
   def calc_balance
-    return 0 if @transactions == []
+    balance = 0
+    @transactions.each do |transaction|
+      balance += transaction.amount
+    end
+    return balance
   end
 
 end
