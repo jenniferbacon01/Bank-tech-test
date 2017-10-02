@@ -19,7 +19,7 @@ describe Bank do
   end
 
   it 'statement string is initially empty' do
-    expect(bank.statement_str).to eq ''
+    expect(bank.statement).to eq ''
   end
 
   it 'receives a transaction and records it' do
@@ -27,14 +27,16 @@ describe Bank do
     expect(bank.transactions).to eq [trans_cr]
   end
 
-  it 'can update the statement with one transaction' do
+  it 'can print the statement with one transaction' do
     bank.receive_transaction(trans_cr)
-    expect(bank.print_statement).to eq "date || credit || debit || balance\n10/01/2012 || 1000.00 || || 1000.00"
+    expect(bank.print_statement).to eq "date || credit || debit || balance\n"\
+    '10/01/2012 || 1000.00 || || 1000.00'
   end
 
-  it 'can update the statement with 2 transactions' do
+  it 'can print the statement with 2 transactions' do
     bank.receive_transaction(trans_cr)
     bank.receive_transaction(trans_db)
-    expect(bank.print_statement).to eq "date || credit || debit || balance\n13/01/2012 || || 500.00 || 500.00\n10/01/2012 || 1000.00 || || 1000.00"
+    expect(bank.print_statement).to eq "date || credit || debit || balance\n"\
+    "13/01/2012 || || 500.00 || 500.00\n10/01/2012 || 1000.00 || || 1000.00"
   end
 end

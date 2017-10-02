@@ -1,9 +1,9 @@
 class Bank
-  attr_reader :transactions, :balance, :statement_str
+  attr_reader :transactions, :balance, :statement
 
   def initialize
     @transactions = []
-    @statement_str = ''
+    @statement = ''
     @balance = 0
   end
 
@@ -14,27 +14,27 @@ class Bank
   def print_statement(transactions = @transactions)
     transactions.each { |transaction| update_statement(transaction) }
     add_titles_to_statement
-    statement_str
+    @statement
   end
 
   private
 
   def update_statement(transaction)
     @balance += transaction.amount
-    @statement_str.prepend(" || #{@balance}.00")
+    @statement.prepend(" || #{@balance}.00")
     add_amount_to_statement(transaction)
-    @statement_str.prepend("\n#{transaction.date} || ")
+    @statement.prepend("\n#{transaction.date} || ")
   end
 
   def add_amount_to_statement(transaction)
     if transaction.credit_or_debit == :credit
-      @statement_str.prepend("#{transaction.amount}.00 ||")
+      @statement.prepend("#{transaction.amount}.00 ||")
     else
-      @statement_str.prepend("|| #{-transaction.amount}.00")
+      @statement.prepend("|| #{-transaction.amount}.00")
     end
   end
 
   def add_titles_to_statement
-    @statement_str.prepend('date || credit || debit || balance')
+    @statement.prepend('date || credit || debit || balance')
   end
 end
