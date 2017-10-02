@@ -5,7 +5,6 @@
         1,
         null,
         1,
-        null,
         5,
         4,
         null,
@@ -61,32 +60,47 @@
         null,
         1,
         null,
-        null,
         null
       ],
       "/Users/jenniferbacon/Documents/Coding/Makers/week14/Bank-tech-test/spec/transaction_spec.rb": [
         1,
         null,
         1,
+        1,
         2,
         1,
         1,
         1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        null,
         null,
         null
       ],
       "/Users/jenniferbacon/Documents/Coding/Makers/week14/Bank-tech-test/lib/transaction.rb": [
         1,
-        null,
         1,
         null,
         1,
+        2,
+        2,
         1,
         1,
+        1,
+        1,
+        1,
+        null,
         null,
         null
       ]
     },
-    "timestamp": 1506941707
+    "timestamp": 1506942299
   }
 }

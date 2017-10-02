@@ -18,7 +18,7 @@ class Bank
   end
 
   def print_statement
-    statement_str = "date || amount || balance"
+    statement_str = 'date || amount || balance'
     historic_balance = 0
     @transactions.each do |transaction|
       historic_balance += transaction.amount
@@ -26,5 +26,4 @@ class Bank
     end
     statement_str
   end
-
 end
