@@ -17,10 +17,6 @@ describe Statement do
     expect(statement.balance).to eq 0
   end
 
-  it 'contents is initially empty' do
-    expect(statement.contents).to eq ''
-  end
-
   it 'can print contents with one transaction' do
     expect(statement.print([trans_cr])).to eq "date || credit || debit || balance\n"\
     '10/01/2012 || 1000.00 || || 1000.00'

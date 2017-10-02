@@ -1,28 +1,26 @@
 class Statement
 
-  attr_reader :balance, :contents
+  attr_reader :balance
 
   def initialize
     @balance = 0
-    @contents = ''
   end
 
   def print(transactions)
-    transactions.each { |transaction| update_contents(transaction) }
-    add_titles_to_contents
-    @contents
+    contents = ""
+    transactions.each { |transaction| contents.prepend(create_trans_str_with_bal(transaction)) }
+    contents.prepend(create_title_str)
+  end
+
+  def create_trans_str_with_bal(transaction)
+    @balance += transaction.amount
+    transaction.create_trans_str + " || #{@balance}.00"
   end
 
   private
 
-  def update_contents(transaction)
-    @balance += transaction.amount
-    @contents.prepend(" || #{@balance}.00")
-    @contents.prepend(transaction.create_trans_str)
-  end
-
-  def add_titles_to_contents
-    @contents.prepend('date || credit || debit || balance')
+  def create_title_str
+    'date || credit || debit || balance'
   end
 
 end
