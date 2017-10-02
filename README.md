@@ -5,6 +5,9 @@ An irb application to record transactions and then print them on a statement. Th
 - Receive Deposits
 - Take Withdrawals
 - Print a Statement
+
+Comments
+-----
 I have structured the application into three classes with the following responsibilities:
 Bank: To receive and record transactions.
 Transaction: To receive a date and an amount on instantiation. To format this information into a string.
