@@ -5,6 +5,6 @@ describe Bank do
   let(:transaction) { double :transaction}
   it "creates a transaction and records it" do
     bank.receive_transaction(transaction)
-    expect(bank.transactions[0]).to eq [transaction]
+    expect(bank.transactions).to eq [transaction]
   end
 end
