@@ -1,20 +1,16 @@
 class Statement
 
-  attr_reader :balance
-
-  def initialize
-    @balance = 0
-  end
-
   def print(transactions)
-    contents = ""
-    transactions.each { |transaction| contents.prepend(create_trans_str_with_bal(transaction)) }
-    contents.prepend(create_title_str)
+    balance = 0
+    contents = transactions.map do |transaction|
+      balance += transaction.amount
+      create_trans_str_with_bal(transaction, balance)
+    end.reverse.join
+    create_title_str + contents
   end
 
-  def create_trans_str_with_bal(transaction)
-    @balance += transaction.amount
-    transaction.create_trans_str + " || #{@balance}.00"
+  def create_trans_str_with_bal(transaction, balance)
+    transaction.format + " || #{balance}.00"
   end
 
   private

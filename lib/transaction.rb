@@ -1,9 +1,10 @@
 class Transaction
   attr_reader :date, :amount
 
-  def initialize(date, amount)
+  def initialize(date, amount, transaction_formatter = TransactionFormatter.new)
     @date = date
     @amount = amount
+    @transaction_formatter = transaction_formatter
   end
 
   def calc_credit_or_debit
@@ -11,19 +12,8 @@ class Transaction
     return :debit if @amount < 0
   end
 
-  def create_trans_str
-    create_date_str + create_amount_str
-  end
-
-  private
-
-  def create_date_str
-    return "\n#{@date} || "
-  end
-
-  def create_amount_str
-    return "#{@amount}.00 ||" if calc_credit_or_debit == :credit
-    return "|| #{-@amount}.00" if calc_credit_or_debit == :debit
+  def format
+    @transaction_formatter.format(@date, @amount, calc_credit_or_debit)
   end
 
 end

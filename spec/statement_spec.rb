@@ -7,14 +7,10 @@ describe Statement do
   let(:trans_db) { double :transaction }
 
   before do
-    allow(trans_cr).to receive(:create_trans_str).and_return("\n10/01/2012 || 1000.00 ||")
+    allow(trans_cr).to receive(:format).and_return("\n10/01/2012 || 1000.00 ||")
     allow(trans_cr).to receive(:amount).and_return(1000)
-    allow(trans_db).to receive(:create_trans_str).and_return("\n13/01/2012 || || 500.00")
+    allow(trans_db).to receive(:format).and_return("\n13/01/2012 || || 500.00")
     allow(trans_db).to receive(:amount).and_return(-500)
-  end
-
-  it 'balance is initially zero' do
-    expect(statement.balance).to eq 0
   end
 
   it 'can print contents with one transaction' do
